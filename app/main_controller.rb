@@ -84,6 +84,7 @@ class MainController < UIViewController
   def viewDidLoad
     super
     view.backgroundColor = UIColor.whiteColor
+
     current = UIButton.buttonWithType(UIButtonTypeSystem).tap do |b|
       b.tag = CURRENT
       b.setTitle('現在位置', forState:UIControlStateNormal)
@@ -91,6 +92,7 @@ class MainController < UIViewController
       b.frame = [[0, self.view.frame.size.height - 44], [80, 44]]
     end
     view.addSubview(current)
+
     sapporo = UIButton.buttonWithType(UIButtonTypeSystem).tap do |b|
       b.tag = SAPPORO
       b.setTitle('札幌', forState:UIControlStateNormal)
@@ -98,6 +100,7 @@ class MainController < UIViewController
       b.frame = [[80, self.view.frame.size.height - 44], [80, 44]]
     end
     view.addSubview(sapporo)
+
     tokyo = UIButton.buttonWithType(UIButtonTypeSystem).tap do |b|
       b.tag = TOKYO
       b.setTitle('東京', forState:UIControlStateNormal)
@@ -105,6 +108,7 @@ class MainController < UIViewController
       b.frame = [[160, self.view.frame.size.height - 44], [80, 44]]
     end
     view.addSubview(tokyo)
+
     fukuoka = UIButton.buttonWithType(UIButtonTypeSystem).tap do |b|
       b.tag = FUKUOKA
       b.setTitle('福岡', forState:UIControlStateNormal)
@@ -112,6 +116,7 @@ class MainController < UIViewController
       b.frame = [[240, self.view.frame.size.height - 44], [80, 44]]
     end
     view.addSubview(fukuoka)
+
     # デフォルトは東京駅の位置
     # 緯度: 35.681382 経度: 139.766084
     @map = MapView.new.tap do |m|
